@@ -9,6 +9,7 @@
 
 <body class="conteudo exercicio">
     <h1>Estados</h1>
+    
 
     <script>
         function ajax(config){
@@ -36,9 +37,9 @@
             metodo: "get",
             sucesso(resposta){
                 const estados = resposta.getElementsByTagName('estado')
-                const itens = Array.from(estados).reduce((html, estado) =>{
-                    html + `<li>${estado.attributes.nome.value}</li>`, ''
-                })
+                const itens = Array.from(estados).reduce((html, estado) => {
+                    return html + `<li>${estado.attributes.nome.value}</li>`
+                }, '')
                 console.log(itens)
                 document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
             },
